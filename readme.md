@@ -172,6 +172,48 @@ classDiagram
     IGeschmeidig <|.. Mensch
 ```
 
+### Inheritance2
+
+Erstellen Sie ein Programm in C#, das eine Hierarchie von Fahrzeugen modelliert. Die Fahrzeuge können verschiedene 
+Typen sein, wie Autos, Motorräder usw. Jedes Fahrzeug sollte mindestens folgende Attribute haben: 
+- Marke
+- Modell
+- Höchstgeschwindigkeit.
+
+Verwenden Sie dafür ein abstraktes Klasse (Fahrzeug) und ein Interface (IFahrbar). Das Interface sollte eine Methode 
+`Fahren()` enthalten, die die Aktion des Fahrens repräsentiert. Die abstrakte Klasse sollte die allgemeinen
+Eigenschaften und Methoden der Fahrzeuge enthalten, sie besitzt auch das Interface, dass die spezifische Aktion
+des Fahrens definiert. Die Abstrakte Klasse besitzt die abstrakte Methode `FahrzeugInfo()` welche in den konkreten
+Klassen dann `Marke`, `Modell` und `Höchstgeschwindigkeit` per Console ausgibt.
+
+Erstellen Sie dann mindestens zwei konkrete Klassen `Auto` und `Motorrad`, die von der abstrakten Klasse erben und
+das Interface implementieren. Implementiere die `Fahren()`-Methode und `Fahrzeuglnfo()`-Methode für jedes Fahrzeug 
+entsprechend. 
+
+Schließlich, in eines Programms (Klasse `Program`), erstellen Sie Objekte für jedes Fahrzeug
+und rufen die `Fahren()`-Methode auf und geben zusätzlich die Informationen über jedes Fahrzeug aus.
+
+Namespaces werden nicht erwartet. Freie Wahl ob Getter/Setter oder Properties.
+
+
+```mermaid
+classDiagram
+    class IFahrbar {
+        <<interface>>
+    }
+    class Fahrzeug {
+        <<abstract>>
+    }
+    class Auto {
+    }
+    class Motorrad {
+    }
+    Fahrzeug <|-- Auto
+    Fahrzeug <|-- Motorrad
+    IFahrbar <|.. Auto
+    IFahrbar <|.. Motorrad
+```
+
 ### Mathe
 
 Für den Mathematikunterricht einer Berufsschule soll eine Klasse 
@@ -212,3 +254,29 @@ Wählen Sie für die Variablen geeignete Datentypen.
 > - Zinssatz: 5 (Prozent)
 > - Endkapital: 1157.625 (Euro nach drei Jahren)
 
+### MySQL
+Sie haben von einem Mitarbeiter ein C# Skript bekommen, das mit einer Datenbank kommunizieren soll. Dieses
+Skript greift auf die Tabelle Kunden zu, die die folgenden Spalten enthält: `id`, `vorname`, `nachname` .
+
+Schreiben Sie die `Lesen()` Methode um die Tabelle in der Konsole auszugeben.
+Verwenden Sie hierfür auf jedenfall ein `Try-Catch`.
+
+```csharp
+    private static string connectionString =
+      "Server=127.0.0.1; Database=onlineshop;User=root;Password=;";
+
+    private static MySqlConnection connection;
+
+    public static void Verbinden()
+    {
+      try
+      {
+        connection = new MySqlConnection(connectionString);
+        connection.Open();
+      }
+      catch (Exception e)
+      {
+        Console.WriteLine(e);
+        throw;
+      }
+```

@@ -99,6 +99,12 @@
         <Compile Include="04.24\App.cs" />
         <Compile Include="04.24\Auto.cs" />
         <Compile Include="04.24\FehlerError.cs" />
+        <Compile Include="Aufgaben\Inheritance2\Auto.cs" />
+        <Compile Include="Aufgaben\Inheritance2\Fahrzeug.cs" />
+        <Compile Include="Aufgaben\Inheritance2\IFahrbar.cs" />
+        <Compile Include="Aufgaben\Inheritance2\Motorrad.cs" />
+        <Compile Include="Aufgaben\Inheritance2\Program.cs" />
+        <Compile Include="Aufgaben\MySql\MySql.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="Aufgaben\Inheritance\App.cs" />
